@@ -44,7 +44,6 @@ class Player:
         return total
 
     def isWinner(self):
-        print(self.sumStep())
         return self.sumStep() == 15
 
 
@@ -93,12 +92,12 @@ Who first take horizantal, vertical or cross three spaces is the Winner.\n""")
                         print('This space is marked. Choose another one')
                         self.board.showBoard()
                 except:
-                    print("Select 1-9")
+                    print("Please select in a range 1 to 9")
 
             if turn.isWinner():
                 print(f"{turn.name} is winner. Game over!")
                 self.board.showBoard()
-                break
+                return
             self.board.updateBoard(self.p1, self.p2)
             self.board.showBoard()
             if turn == self.p1:
